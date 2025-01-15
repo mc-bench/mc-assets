@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - 'v[0-9]+.[0-9]+.[0-9]+'  # Matches semantic version branches
+      - 'main'
 
 jobs:
   test:
