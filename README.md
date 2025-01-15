@@ -25,6 +25,28 @@ For development:
 pip install -e ".[dev]"
 ```
 
+## Usage
+
+```python
+from minecraft_assets import get_asset_root, get_asset_dir
+
+# Get the root assets directory
+assets_root = get_asset_root()
+print(assets_root)  # Path to the root assets directory
+
+# Get assets directory for a specific version
+version_dir = get_asset_dir("1.20.4")
+print(version_dir)  # Path to version-specific assets
+
+# Will raise MinecraftVersionError if version doesn't exist
+try:
+    invalid_dir = get_asset_dir("9.99.99")
+except MinecraftVersionError as e:
+    print(f"Error: {e}")
+```
+
+The package provides functions to access Minecraft asset directories. Each version's directory contains the raw asset files from the corresponding Minecraft version.
+
 ## Development
 
 This project uses:
