@@ -9,6 +9,12 @@ authors = [
 ]
 requires-python = ">=3.9,<3.14"
 
+# Fix URLs section syntax
+[project.urls]
+Homepage = "https://github.com/mc-bench/mc-assets"
+Repository = "https://github.com/mc-bench/mc-assets.git"
+Issues = "https://github.com/mc-bench/mc-assets/issues"
+
 [project.optional-dependencies]
 dev = [
     "ruff>=0.3.0",
