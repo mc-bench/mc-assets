@@ -2,7 +2,7 @@
 
 import pytest
 
-from minecraft_assets import get_asset_dir, get_asset_root, MinecraftVersionError
+from minecraft_assets import MinecraftVersionError, get_asset_dir, get_asset_root
 
 
 def test_get_asset_root():
@@ -31,6 +31,7 @@ SUPPORTED_VERSIONS = [
     "1.21.1",
 ]
 
+
 @pytest.mark.parametrize("version", SUPPORTED_VERSIONS)
 def test_version_dir_accessible(version: str):
     """Test that specific version directories are accessible."""
@@ -43,5 +44,5 @@ def test_get_invalid_asset_dir():
     """Test that get_asset_dir raises an error for invalid versions."""
     with pytest.raises(MinecraftVersionError) as exc_info:
         get_asset_dir("9999.999.999")
-    
-    assert "not found in assets" in str(exc_info.value) 
+
+    assert "not found in assets" in str(exc_info.value)
