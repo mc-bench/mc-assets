@@ -10,9 +10,9 @@ TARGET_DIR="${1:-src/minecraft_assets/data}"  # Allow override via first argumen
 
 echo "Creating temporary directory at: $TEMP_DIR"
 
-# Clone the repository at specific version
+# Clone the repository at specific version (using HTTPS instead of SSH)
 echo "Cloning PrismarineJS/minecraft-assets at version $MINECRAFT_ASSETS_VERSION..."
-git clone git@github.com:PrismarineJS/minecraft-assets.git "$TEMP_DIR"
+git clone https://github.com/PrismarineJS/minecraft-assets.git "$TEMP_DIR"
 cd "$TEMP_DIR"
 git checkout "$MINECRAFT_ASSETS_VERSION"
 
