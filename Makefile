@@ -10,7 +10,7 @@ format:
 fix: format
 
 test:
-	pytest tests -v
+	pytest tests -v --cov=mc_assets --cov-report=xml
 
 build:
 	python -m build .
@@ -25,4 +25,4 @@ update-assets:
 	./update-assets.sh
 
 clean:
-	rm -rf build/ dist/ *.egg-info/ .pytest_cache/ __pycache__/ .ruff_cache/
+	rm -rf build/ dist/ *.egg-info/ .pytest_cache/ __pycache__/ .ruff_cache/ .coverage coverage.xml
